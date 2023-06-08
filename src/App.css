@@ -7,6 +7,8 @@
 
 /* Book Area */
 .book_wrapper {
+  width: 80%;
+  padding: 0.5rem 0;
 }
 
 .book_poster {
@@ -24,6 +26,8 @@
   transition: all 0.3s ease-out;
 }
 
-.book_poster img:hover {
+.book_wrapper:hover img {
   transform: scale(1.2);
 }
+
+/* Wishlist Button */
