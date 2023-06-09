@@ -1,7 +1,11 @@
 import SEVEN_INK from "../assets/SEVEN_INK.png";
 import { Link } from "react-router-dom";
+import { BAG_CONTEXT } from "../contextAPI/BagProvider";
+import { useContext } from "react";
 
 const Navbar = () => {
+  const { test } = useContext(BAG_CONTEXT);
+  console.log(test);
   return (
     <nav className="container mx-auto flex justify-between items-center">
       <div className="w-40">
