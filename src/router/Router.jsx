@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import Bag from "../components/Bag";
+import Favorites from "../components/Favorites";
 import Main from "../layout/Main";
 import Home from "../pages/Home";
 
@@ -18,8 +18,8 @@ export const routes = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/bag",
-        element: <Bag />,
+        path: "/favorites",
+        element: <Favorites />,
       },
     ],
   },
