@@ -7,11 +7,12 @@ export const BAG_CONTEXT = createContext();
 
 const BagProvider = ({ children }) => {
   const getInitialState = () => {
-    const favorites = localStorage.getItem("favorites");
-    return favorites ? JSON.parse(favorites) : [];
+    const initialState = localStorage.getItem("favorites");
+    return initialState ? JSON.parse(initialState) : [];
   };
-  
+
   const [favorites, setFavorites] = useState(getInitialState);
+
   // storing data in local storage
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
