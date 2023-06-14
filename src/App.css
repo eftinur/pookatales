@@ -30,4 +30,9 @@
   object-fit: cover;
 }
 
-/* Styling Button */
+/* Hero Area */
+.photo_wrapper {
+  position: relative;
+  background: inherit;
+}
+

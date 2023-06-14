@@ -13,6 +13,9 @@ const Navbar = () => {
         <ul className="flex items-center gap-x-8 text-sm text-gray-400 font-medium uppercase">
           {/* Navigating with React Router */}
           <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
             <Link to="/">Shop</Link>
           </li>
           <li>

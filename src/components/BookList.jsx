@@ -17,7 +17,7 @@ const BookList = () => {
   return (
     <div className="container mx-auto px-4 my-20">
       <h5 className="heading_text w-3/4 mx-auto text-[8rem] text-gray-400 font-light text-center leading-[128px] uppercase py-12">
-       Best seller this week
+       Top Sellers this week
       </h5>
       <div className="w-full grid grid-cols-5">
         {books.map((book, index) => (

@@ -33,7 +33,7 @@ const BookDetail = () => {
         <h5>BAZINGA</h5>
       ) : (
         <div className="flex justify-between items-center gap-14">
-          <div className="w-1/4">
+          <div className="w-1/4 shadow-2xl">
             <img className="w-full" src={book?.image_url} alt="" />
           </div>
           <div className="flex-1 px-8">

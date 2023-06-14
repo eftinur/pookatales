@@ -24,8 +24,9 @@ const TermsConditions = () => {
           <img className="w-full" src={book[0]?.image_url} alt="" />
         </div>
         <div className="py-4 mt-5 text-gray-100">
-          <h5 className="text-3xl font-medium mb-5">{book[0]?.title}</h5>
+          <h5 className="text-3xl font-medium mb-8">{book[0]?.title}</h5>
           <p>{book[0]?.description}</p>
+          <p className="mt-6">Authors: {book[0]?.authors}</p>
         </div>
       </div>
     </div>
