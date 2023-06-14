@@ -1,23 +1,33 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect } from "react";
+import { useState } from "react";
 
 const TermsConditions = () => {
+  const [book, setBook] = useState([]);
+  // GEtting data from API
+  const API_URL =
+    "https://example-data.draftbit.com/books?q=The Fault in Our Stars"; // API URL
+  useEffect(() => {
+    axios.get(API_URL).then((res) => {
+      setBook(res.data);
+    });
+  }, []);
+
+  console.log(book);
   return (
-    <div className="container mx-auto my-20">
-      <h5 className="text-xl text-gray-300 font-medium text-center uppercase tracking-[2rem]">libraria</h5>
-      <p className="w-2/4 mx-auto text-sm text-gray-400 font-medium mt-5">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam ipsum
-        excepturi hic dicta distinctio illum consequuntur recusandae. Delectus
-        atque sunt unde quisquam possimus, quo ex sequi cumque accusantium
-        obcaecati recusandae neque veniam, mollitia molestiae beatae debitis
-        nisi eveniet fuga nihil quis voluptatem? Sint facere consequuntur
-        voluptates suscipit. Suscipit odio quos dolorem distinctio, quia illum
-        placeat magnam harum molestias mollitia doloremque cumque reiciendis
-        laboriosam expedita consequatur impedit dolores atque nostrum! Lorem
-        ipsum dolor sit amet consectetur adipisicing elit. Fuga alias obcaecati
-        ratione, repudiandae distinctio harum commodi? Doloribus sapiente,
-        veritatis natus amet voluptatibus cumque autem! Cupiditate, perferendis?
-        Pariatur incidunt adipisci porro minus nisi?
-      </p>
+    <div className="bg-[#8846FF]">
+      <div className="container mx-auto py-20 relative">
+        <h5 className="heading_text w-3/4 mx-auto text-[8rem] text-gray-200 font-light text-center leading-[128px] uppercase">
+          Upcoming this week
+        </h5>
+        <div className="w-1/4 mx-auto my-8 shadow-2xl">
+          <img className="w-full" src={book[0]?.image_url} alt="" />
+        </div>
+        <div className="py-4 mt-5 text-gray-100">
+          <h5 className="text-3xl font-medium mb-5">{book[0]?.title}</h5>
+          <p>{book[0]?.description}</p>
+        </div>
+      </div>
     </div>
   );
 };

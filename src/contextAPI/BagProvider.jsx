@@ -6,17 +6,13 @@ import { createContext } from "react";
 export const BAG_CONTEXT = createContext();
 
 const BagProvider = ({ children }) => {
+  // Getting state from the localStorage
   const getInitialState = () => {
     const initialState = localStorage.getItem("favorites");
     return initialState ? JSON.parse(initialState) : [];
   };
 
   const [favorites, setFavorites] = useState(getInitialState);
-
-  // storing data in local storage
-  useEffect(() => {
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-  }, [favorites]);
 
   // Adding Method
   const addToFavorites = (book) => {
@@ -30,6 +26,11 @@ const BagProvider = ({ children }) => {
     const newFavorites = oldFavorites.filter((book) => book.id !== id);
     setFavorites(newFavorites);
   };
+
+  // storing state from the localStorage
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }, [favorites]);
 
   const value = {
     favorites,
