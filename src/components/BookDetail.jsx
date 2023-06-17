@@ -3,6 +3,7 @@ import { useContext, useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { BAG_CONTEXT } from "../contextAPI/BagProvider";
+import Loaders from "./Loaders";
 
 const BookDetail = () => {
   const [book, setBook] = useState({});
@@ -28,54 +29,52 @@ const BookDetail = () => {
   };
 
   return (
-    <div className="container h-[80vh] mx-auto py-12 px-4">
+    <div className="container mx-auto py-20 px-4">
       {loader ? (
-        <h5>BAZINGA</h5>
+        // UI Loaders until getting API response
+        <Loaders />
       ) : (
-        <div className="flex justify-between items-center gap-14">
-          <div className="w-1/4 shadow-2xl">
-            <img className="w-full" src={book?.image_url} alt="" />
+        <div className="flex justify-between items-center flex-col lg:flex-row gap-14">
+          <div className="w-2/4 lg:w-1/4 shadow-2xl">
+            <img className="w-4/5 lg:w-full" src={book?.image_url} alt="" />
           </div>
-          <div className="flex-1 px-8">
-            <h2 className="text-5xl text-gray-400 font-light mb-8">
+          <div className="flex-1 px-4 py-8">
+            <h2 className="text-4xl lg:text-5xl text-gray-400 font-light border-b pb-4 mb-8">
               {book?.title}
             </h2>
-            <p className="text-lg text-gray-400 font-light">
+            <p className="text-sm lg:text-lg text-gray-400 font-light">
               {book?.description}
             </p>
-            <p className="text-xl text-gray-400 font-medium mt-5">
+            <p className="text-xl lg:text-xl text-gray-400 font-medium my-2">
               Authors: {book?.authors}
             </p>
             {book?.edition ? (
-              <p className="text-lg text-gray-400 font-light">
+              <p className="text-sm lg:text-lg text-gray-400 font-light">
                 Edition: {book?.edition}
               </p>
             ) : (
-              <p className="text-lg text-gray-400 font-light">
+              <p className="text-sm lg:text-lg text-gray-400 font-light">
                 Edition: Unknown
               </p>
             )}
-            <p className="text-lg text-gray-400 font-light">
+            <p className="text-sm lg:text-lg text-gray-400 font- my-2">
               Genres: {book?.genres}
             </p>
-            <p className="text-lg text-gray-400 font-light">
+            <p className="text-sm lg:text-lg text-gray-400 font-light">
               Rating: {book?.rating}
             </p>
             {/* toggleBTN depending on the state */}
-            <div className="mt-8 text-gray-400 capitalize">
+            <div className="mt-8">
               {checkFavorites(book.id) ? (
                 <button
-                  className="px-6 py-3 border rounded-xl"
                   onClick={() => deleteFromFavorites(book.id)}
+                  className="button"
                 >
-                  Delete Favorites
+                  Delete Item
                 </button>
               ) : (
-                <button
-                  className="px-6 py-3 border rounded-xl"
-                  onClick={() => addToFavorites(book)}
-                >
-                  Add Favorites
+                <button className="button" onClick={() => addToFavorites(book)}>
+                  Add Item
                 </button>
               )}
             </div>

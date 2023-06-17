@@ -2,7 +2,7 @@ import pookatales from "../assets/pookatales.png";
 
 const Footer = () => {
   return (
-    <footer className="flex justify-center items-center border-t border-[#4C5D4D] gap-x-2 py-5">
+    <footer className="container mx-auto flex justify-between items-center border-t px-4">
       <div className="w-28">
         <img className="w-full" src={pookatales} alt="" />
       </div>

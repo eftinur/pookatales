@@ -1,7 +1,7 @@
 import About from "../components/About";
 import BookList from "../components/BookList";
 import Hero from "../components/Hero";
-import TermsConditions from "../components/TermsConditions";
+import Upcoming from "../components/Upcoming";
 
 const Home = () => {
   return (
@@ -9,7 +9,7 @@ const Home = () => {
       <Hero />
       <About />
       <BookList />
-      <TermsConditions />
+      <Upcoming />
     </>
   );
 };

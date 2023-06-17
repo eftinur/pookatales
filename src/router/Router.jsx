@@ -3,6 +3,7 @@ import BookDetail from "../components/BookDetail";
 import Favorites from "../components/Favorites";
 import Main from "../layout/Main";
 import Home from "../pages/Home";
+import ShopPage from "../pages/ShopPage";
 
 export const routes = createBrowserRouter([
   /* react_router config
@@ -25,6 +26,10 @@ export const routes = createBrowserRouter([
       {
         path: "/books/:id",
         element: <BookDetail />,
+      },
+      {
+        path: "/shop",
+        element: <ShopPage />,
       },
     ],
   },
