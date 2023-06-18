@@ -45,7 +45,7 @@ const BookDetail = () => {
             <p className="text-sm lg:text-lg text-gray-400 font-light">
               {book?.description}
             </p>
-            <p className="text-xl lg:text-xl text-gray-400 font-medium my-2">
+            <p className="text-xl lg:text-xl text-gray-400 font-medium mt-5 mb-2">
               Authors: {book?.authors}
             </p>
             {book?.edition ? (

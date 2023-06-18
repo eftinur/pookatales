@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Loaders from "./Loaders";
+import BookCard from "./BookCard";
 
 const BookList = () => {
   const [books, setBooks] = useState([]);
@@ -32,18 +33,7 @@ const BookList = () => {
         <div className="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
           {books.map((book, index) => (
             // Mapping items to render in the UI
-            <div
-              onClick={() => navigate(`/books/${book.id}`)}
-              className="book_wrapper shadow-xl rounded-xl"
-              key={index}
-            >
-              <div className="book_poster rounded-md">
-                <img src={book?.image_url} alt="poster" />
-              </div>
-              <div className="mt-8 font-medium text-gray-400 text-center">
-                <h5>{book?.title}</h5>
-              </div>
-            </div>
+            <BookCard key={index} book={book} />
           ))}
         </div>
       )}
