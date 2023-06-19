@@ -27,7 +27,7 @@ const BookList = () => {
       </div>
 
       {loader ? (
-        // UI Loaders until getting API response
+        // Wobble Loaders Animation until getting API response
         <Loaders />
       ) : (
         <div className="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5">

@@ -31,7 +31,7 @@ const BookDetail = () => {
   return (
     <div className="container mx-auto py-20 px-4">
       {loader ? (
-        // UI Loaders until getting API response
+        // Wobble Loaders Animation until getting API response
         <Loaders />
       ) : (
         <div className="flex justify-between items-center flex-col lg:flex-row gap-14">

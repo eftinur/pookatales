@@ -7,7 +7,156 @@
 }
 
 /* Main UI CSS */
+/* GSAP Navigation */
+header {
+  /* position: fixed; */
+  /* top: 0; */
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  width: 100%;
+  z-index: 80;
+}
 
+.header_wrapper {
+  padding: inherit;
+}
+
+.inner_header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* HAMBURGER MENU BUTTON */
+.menu_trigger {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  flex-direction: column;
+  width: 48px;
+  height: 38px;
+  position: relative;
+  cursor: pointer;
+}
+
+.menu_trigger span {
+  display: inline-flex;
+  width: 28px;
+  height: 2px;
+  border-radius: 16px;
+  background: #1e1e1e;
+  transition: all ease 0.5s;
+}
+
+.menu_trigger span:nth-child(2) {
+  width: 20px;
+}
+
+.menu_close span {
+  position: absolute;
+  background: #1e1e1e;
+}
+
+.menu_close span:nth-child(1) {
+  transform: rotate(38deg);
+}
+
+.menu_close span:nth-child(3) {
+  transform: rotate(-38deg);
+}
+
+.menu_close span:nth-child(2) {
+  display: none;
+}
+
+/* HAMBURGER MENU LAYOUT */
+.hamburger_menu {
+  /* display: none; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+}
+
+.reveal_menu-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+}
+
+.menu_main {
+  position: relative;
+  background: red;
+  height: 100%;
+  overflow: hidden;
+}
+
+.menu_wrapper {
+  position: relative;
+}
+
+.menu_tags {
+  position: relative;
+  top: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 48px;
+}
+
+.menu_tags nav {
+  display: block;
+}
+
+.menu_tags nav li {
+  position: relative;
+  font-size: 6rem;
+  font-weight: 300;
+  width: 700px;
+  height: 135px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.menu_tags ul li a {
+  position: absolute;
+  color: #fff;
+  transition: all ease-in-out 0.3s;
+}
+
+.menu_tags ul li a:hover {
+  position: inherit;
+  color: #1e1e1e;
+}
+
+.info {
+  width: 300px;
+  color: #fff;
+}
+
+.info h3 {
+  font-size: 1.2rem;
+  margin: 8px auto;
+}
+
+.info p {
+  font-size: 0.8rem;
+  margin: 0 auto;
+}
+
+/* UNDER CONSTRUCTION */
 /* Stying Book redering UI */
 .book_wrapper {
   width: 80%;
@@ -84,7 +233,7 @@
   transform: translateY(-1px);
 }
 
-/* LOADER DESIGN */
+/* LOADER ANIMATION DESIGN */
 .three-body {
   --uib-size: 35px;
   --uib-speed: 0.8s;

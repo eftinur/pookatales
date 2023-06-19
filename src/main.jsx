@@ -5,9 +5,7 @@ import BagProvider from "./contextAPI/BagProvider.jsx";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
     <BagProvider>
       <App />
     </BagProvider>
-  </React.StrictMode>
 );
