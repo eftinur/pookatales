@@ -100,15 +100,23 @@ const HamburgerMenu = ({ menuState }) => {
               </nav>
               <div
                 ref={(el) => (info = el)}
-                className="info w-full lg:w-[300px] text-white"
+                className="info w-full lg:w-[320px] text-white"
               >
                 <>
                   <h3>Our Promise</h3>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Possimus nulla fugiat, aperiam expedita delectus, id facere
-                    quis cum atque corrupti, sed maxime commodi laboriosam. Ea
-                    necessitatibus cumque vitae iusto minima nihil eaque?
+                    Our mission is to provide quality but affordable books for
+                    education, entertainment, self-development and
+                    self-fulfillment; to all when the need arises by:
+                  </p>
+                  <p className="py-4">
+                    Providing a wide range of books to satisfy our clients
+                    Exceeding our customers’ expectation in their book
+                    requirements Making our books accessible in the market.
+                    Acting as agents for both customers and publishers and
+                    working for their interest; enriching our client’s life in
+                    their quest for educational and entertaining books and
+                    advancing the cause of our publishers.
                   </p>
                 </>
               </div>
