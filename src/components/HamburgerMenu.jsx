@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 
-const HamburgerMenu = ({ menuContent }) => {
+const HamburgerMenu = ({ menuState }) => {
   let menu = useRef(null);
   let revealMenu = useRef(null);
   let revealMenuBackground = useRef(null);
@@ -13,33 +13,57 @@ const HamburgerMenu = ({ menuContent }) => {
   let info = useRef(null);
 
   useEffect(() => {
-    if (menuContent.clicked === false) {
-      // We'll Close The Menu
-      // menu.style.display = "none";
+    if (menuState.taped === false) {
       gsap.to([revealMenu, revealMenuBackground], {
         duration: 0.8,
         height: 0,
+        // y: "-100%",
         ease: "power3.inOut",
         stagger: {
           amount: 0.07,
         },
       });
+      gsap.to(menu, { duration: 1, css: { display: "none" } });
     } else if (
-      menuContent.clicked === true ||
-      (menuContent.clicked === true && menuContent.initial === null)
+      menuState.taped === true ||
+      (menuState.taped === true && menuState.initial === null)
     ) {
-      // We'll Open The Menu
-      // menu.style.display = "block";
-      gsap.to([revealMenu, revealMenuBackground], {
+      gsap.to(menu, { duration: 0, css: { display: "block" } });
+
+      gsap.to([revealMenuBackground, revealMenu], {
         duration: 0.8,
-        height: '100%',
+        height: "100%",
+        // y: "0%",
         ease: "power3.inOut",
         stagger: {
           amount: 0.07,
         },
       });
+      fadeInUp(info);
+      staggerLinks(line1, line2, line3);
     }
-  });
+  }, [menuState]);
+
+  const staggerLinks = (node1, node2, node3) => {
+    gsap.from([node1, node2, node3], {
+      y: 100,
+      duration: 0.8,
+      delay: 0.1,
+      opacity: 0,
+      ease: "power3.inOut",
+      stagger: { amount: 0.1 },
+    });
+  };
+
+  const fadeInUp = (node) => {
+    gsap.from(node, {
+      y: 60,
+      duration: 1,
+      delay: 0.2,
+      opacity: 0,
+      ease: "power3.inOut",
+    });
+  };
 
   return (
     <div ref={(el) => (menu = el)} className="hamburger_menu">
@@ -50,29 +74,43 @@ const HamburgerMenu = ({ menuContent }) => {
       <div ref={(el) => (revealMenu = el)} className="menu_main">
         <div className="container mx-auto">
           <div className="menu_wrapper">
-            <div className="menu_tags">
-              <nav>
+            <div className="menu_tags flex justify-between items-start lg:items-center flex-col lg:flex-row px-4">
+              <nav className="w-3/4">
                 <ul>
                   {/* Navigating with React Router */}
-                  <li ref={(el) => (line1 = el)} className="">
+                  <li
+                    ref={(el) => (line1 = el)}
+                    className="w-full lg:w-[700px] h-[80px] lg:h-[135px] text-4xl lg:text-8xl font-light"
+                  >
                     <Link to="/">Home</Link>
                   </li>
-                  <li ref={(el) => (line2 = el)} className="">
+                  <li
+                    ref={(el) => (line2 = el)}
+                    className="w-full lg:w--[700px] h-[80px] lg:h-[135px] text-4xl lg:text-8xl font-light"
+                  >
                     <Link to="/shop">Shop</Link>
                   </li>
-                  <li ref={(el) => (line3 = el)} className="">
+                  <li
+                    ref={(el) => (line3 = el)}
+                    className="w-full lg:w--[700px] h-[80px] lg:h-[135px] text-4xl lg:text-8xl font-light"
+                  >
                     <Link to="/favorites">Favorites</Link>
                   </li>
                 </ul>
               </nav>
-              <div ref={(el) => (info = el)} className="info">
-                <h3>Our Promise</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Possimus nulla fugiat, aperiam expedita delectus, id facere
-                  quis cum atque corrupti, sed maxime commodi laboriosam. Ea
-                  necessitatibus cumque vitae iusto minima nihil eaque?
-                </p>
+              <div
+                ref={(el) => (info = el)}
+                className="info w-full lg:w-[300px] text-white"
+              >
+                <>
+                  <h3>Our Promise</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Possimus nulla fugiat, aperiam expedita delectus, id facere
+                    quis cum atque corrupti, sed maxime commodi laboriosam. Ea
+                    necessitatibus cumque vitae iusto minima nihil eaque?
+                  </p>
+                </>
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-const BookCard = ({book}) => {
+const BookCard = ({ book }) => {
   const navigate = useNavigate();
 
   return (

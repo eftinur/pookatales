@@ -7,18 +7,18 @@ import { useEffect } from "react";
 const Navbar = () => {
   // GSAP Navigation
   // State for Hamburger Button
-  const [menuContent, setMenuContent] = useState({
+  const [menuState, setmenuState] = useState({
     initial: false,
-    clicked: null,
+    taped: null,
     hamburgerBtn: "open",
-    menuState: false,
+    state: false,
   });
-
+  console.log(menuState);
   // testing
   const location = useLocation();
   const history = useNavigate();
   useEffect(() => {
-    setMenuContent({ clicked: false, hamburgerBtn: "close" });
+    setmenuState({ taped: false, hamburgerBtn: "close" });
   }, [location, history]);
 
   // State for Disabled Button
@@ -26,24 +26,24 @@ const Navbar = () => {
 
   const handleMenu = () => {
     disableMenu();
-    if (menuContent.initial === false) {
-      setMenuContent({
+    if (menuState.initial === false) {
+      setmenuState({
         initial: null,
-        clicked: true,
+        taped: true,
         hamburgerBtn: "close",
-        menuState: true,
+        state: true,
       });
-    } else if (menuContent.clicked === true) {
-      setMenuContent({
-        clicked: !menuContent.clicked,
+    } else if (menuState.taped === true) {
+      setmenuState({
+        taped: !menuState.taped,
         hamburgerBtn: "open",
-        menuState: false,
+        state: false,
       });
-    } else if (menuContent.clicked === false) {
-      setMenuContent({
-        clicked: !menuContent.clicked,
+    } else if (menuState.taped === false) {
+      setmenuState({
+        taped: !menuState.taped,
         hamburgerBtn: "close",
-        menuState: true,
+        state: true,
       });
     }
   };
@@ -52,7 +52,6 @@ const Navbar = () => {
   const disableMenu = () => {
     setDisabled(!disabled);
 
-    // Delaying
     setTimeout(() => {
       setDisabled(false);
     }, 1200);
@@ -73,7 +72,7 @@ const Navbar = () => {
               <button
                 disabled={disabled}
                 className={`menu_trigger ${
-                  menuContent.menuState ? "menu_close" : ""
+                  menuState.state ? "menu_close" : ""
                 }`}
                 onClick={handleMenu}
               >
@@ -85,7 +84,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <HamburgerMenu menuContent={menuContent} />
+      <HamburgerMenu menuState={menuState} />
     </header>
   );
 };

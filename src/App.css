@@ -46,7 +46,7 @@ header {
   width: 28px;
   height: 2px;
   border-radius: 16px;
-  background: #1e1e1e;
+  background: #5d5d5d;
   transition: all ease 0.5s;
 }
 
@@ -56,7 +56,7 @@ header {
 
 .menu_close span {
   position: absolute;
-  background: #1e1e1e;
+  background: #5d5d5d;
 }
 
 .menu_close span:nth-child(1) {
@@ -73,7 +73,7 @@ header {
 
 /* HAMBURGER MENU LAYOUT */
 .hamburger_menu {
-  /* display: none; */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -91,14 +91,14 @@ header {
   bottom: 0;
   right: 0;
   z-index: -1;
-  background-color: #fff;
+  background-color: #dfdfde;
   width: 100%;
   height: 100%;
 }
 
 .menu_main {
   position: relative;
-  background: red;
+  background: #8846ff;
   height: 100%;
   overflow: hidden;
 }
@@ -110,9 +110,9 @@ header {
 .menu_tags {
   position: relative;
   top: 200px;
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
   gap: 48px;
 }
 
@@ -122,22 +122,18 @@ header {
 
 .menu_tags nav li {
   position: relative;
-  font-size: 6rem;
-  font-weight: 300;
-  width: 700px;
-  height: 135px;
   overflow: hidden;
   cursor: pointer;
 }
 
 .menu_tags ul li a {
-  position: absolute;
+  /* position: absolute; */
   color: #fff;
   transition: all ease-in-out 0.3s;
 }
 
 .menu_tags ul li a:hover {
-  position: inherit;
+  /* position: inherit; */
   color: #1e1e1e;
 }
 
@@ -149,6 +145,7 @@ header {
 .info h3 {
   font-size: 1.2rem;
   margin: 8px auto;
+  margin-bottom: 18px;
 }
 
 .info p {

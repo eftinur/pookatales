@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import Loaders from "./Loaders";
 import BookCard from "./BookCard";
 
 const BookList = () => {
   const [books, setBooks] = useState([]);
   const [loader, setLoader] = useState(true); // State to handle Loader during fetching API data
-  const navigate = useNavigate();
 
   // GEtting data from API
   const API_URL = "https://example-data.draftbit.com/books?_limit=5"; // API URL
