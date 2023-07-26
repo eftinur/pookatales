@@ -7,7 +7,7 @@ const Footer = () => {
         <img className="w-full" src={pookatales} alt="" />
       </div>
       <>
-        <p className="text-sm text-gray-400 font-medium">
+        <p className="text-sm  font-medium">
           &copy; 2023 POOKATALES
         </p>
       </>

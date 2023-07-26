@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Loaders from "./Loaders";
+import React, { useEffect, useState } from "react";
 import BookCard from "./BookCard";
+import Loaders from "./Loaders";
 
 const Shop = () => {
   const [books, setBooks] = useState([]);
@@ -17,10 +17,10 @@ const Shop = () => {
   }, []);
   console.log(books, loader);
   return (
-    <div className="container mx-auto px-4 py-28">
+    <div className="container mx-auto px-4 py-32">
       <div className="w-3/4 mx-auto py-12">
-        <h5 className="text-4xl lg:text-[8rem] text-gray-400 font-light text-center leading-[48px] lg:leading-[128px] uppercase">
-          Get your copy ASAP!
+        <h5 className="text-4xl lg:text-9xl font-medium text-center  capitalize">
+          Our Book Collections
         </h5>
       </div>
       {loader ? (

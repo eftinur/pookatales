@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
 import axios from "axios";
-import Loaders from "./Loaders";
+import { useEffect, useState } from "react";
 import BookCard from "./BookCard";
+import Loaders from "./Loaders";
 
 const BookList = () => {
   const [books, setBooks] = useState([]);
-  const [loader, setLoader] = useState(true); // State to handle Loader during fetching API data
+  const [loader, setLoader] = useState(true); // State to handle Loader during Fetching API data
 
   // GEtting data from API
   const API_URL = "https://example-data.draftbit.com/books?_limit=5"; // API URL
@@ -19,7 +19,7 @@ const BookList = () => {
   return (
     <div className="container mx-auto px-4 my-20">
       <div className="w-3/4 mx-auto py-12">
-        <h5 className="text-4xl lg:text-[8rem] text-gray-400 font-light text-center leading-[48px] lg:leading-[128px] uppercase">
+        <h5 className="text-4xl lg:text-9xl  font-medium text-center  capitalize">
           Top Sellers this week
         </h5>
       </div>

@@ -1,6 +1,5 @@
 import axios from "axios";
-import { useContext, useEffect } from "react";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { BAG_CONTEXT } from "../contextAPI/BagProvider";
 import Loaders from "./Loaders";
@@ -39,28 +38,28 @@ const BookDetail = () => {
             <img className="w-4/5 lg:w-full" src={book?.image_url} alt="" />
           </div>
           <div className="flex-1 px-4 py-8">
-            <h2 className="text-4xl lg:text-5xl text-gray-400 font-light border-b pb-4 mb-8">
+            <h2 className="text-4xl lg:text-5xl  font-medium border-b pb-4 mb-8 capitalize">
               {book?.title}
             </h2>
-            <p className="text-sm lg:text-lg text-gray-400 font-light">
+            <p className="text-sm lg:text-lg  font-medium">
               {book?.description}
             </p>
-            <p className="text-xl lg:text-xl text-gray-400 font-medium mt-5 mb-2">
+            <p className="text-xl lg:text-xl  font-medium mt-5 mb-2">
               Authors: {book?.authors}
             </p>
             {book?.edition ? (
-              <p className="text-sm lg:text-lg text-gray-400 font-light">
+              <p className="text-sm lg:text-lg  font-medium">
                 Edition: {book?.edition}
               </p>
             ) : (
-              <p className="text-sm lg:text-lg text-gray-400 font-light">
+              <p className="text-sm lg:text-lg  font-medium">
                 Edition: Unknown
               </p>
             )}
-            <p className="text-sm lg:text-lg text-gray-400 font- my-2">
+            <p className="text-sm lg:text-lg  font- my-2">
               Genres: {book?.genres}
             </p>
-            <p className="text-sm lg:text-lg text-gray-400 font-light">
+            <p className="text-sm lg:text-lg  font-medium">
               Rating: {book?.rating}
             </p>
             {/* toggleBTN depending on the state */}

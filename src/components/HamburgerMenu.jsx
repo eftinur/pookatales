@@ -1,7 +1,6 @@
-import { useRef } from "react";
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
 import gsap from "gsap";
+import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 const HamburgerMenu = ({ menuState }) => {
   let menu = useRef(null);
@@ -80,19 +79,19 @@ const HamburgerMenu = ({ menuState }) => {
                   {/* Navigating with React Router */}
                   <li
                     ref={(el) => (line1 = el)}
-                    className="w-full lg:w-[700px] h-[80px] lg:h-[135px] text-4xl lg:text-8xl font-light"
+                    className="w-full lg:w-[700px] h-[80px] lg:h-[135px] text-4xl lg:text-8xl font-medium"
                   >
                     <Link to="/">Home</Link>
                   </li>
                   <li
                     ref={(el) => (line2 = el)}
-                    className="w-full lg:w--[700px] h-[80px] lg:h-[135px] text-4xl lg:text-8xl font-light"
+                    className="w-full lg:w--[700px] h-[80px] lg:h-[135px] text-4xl lg:text-8xl font-medium"
                   >
                     <Link to="/shop">Shop</Link>
                   </li>
                   <li
                     ref={(el) => (line3 = el)}
-                    className="w-full lg:w--[700px] h-[80px] lg:h-[135px] text-4xl lg:text-8xl font-light"
+                    className="w-full lg:w--[700px] h-[80px] lg:h-[135px] text-4xl lg:text-8xl font-medium"
                   >
                     <Link to="/favorites">Favorites</Link>
                   </li>
@@ -103,7 +102,7 @@ const HamburgerMenu = ({ menuState }) => {
                 className="info w-full lg:w-[320px] text-white"
               >
                 <>
-                  <h3>Our Promise</h3>
+                  <h3 className="text-4xl text-white">Our Promise</h3>
                   <p>
                     Our mission is to provide quality but affordable books for
                     education, entertainment, self-development and

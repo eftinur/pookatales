@@ -11,8 +11,8 @@ const BookCard = ({ book }) => {
       <div className="book_poster rounded-md">
         <img src={book?.image_url} alt="poster" />
       </div>
-      <div className="mt-8 font-medium text-gray-400 text-center">
-        <h5>{book?.title}</h5>
+      <div className="mt-8 font-medium  text-center">
+        <h5 className="text-xl capitalize">{book?.title}</h5>
       </div>
     </div>
   );

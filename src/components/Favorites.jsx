@@ -7,9 +7,9 @@ const Bag = () => {
   console.log(favorites);
 
   return (
-    <div className="container min-h-screen mx-auto px-4 py-28">
+    <div className="container min-h-screen mx-auto px-4  py-32">
       <div className="w-3/4 mx-auto py-12">
-        <h5 className="text-4xl lg:text-[8rem] text-gray-400 font-light text-center leading-[48px] lg:leading-[128px] uppercase">
+        <h5 className="text-4xl lg:text-9xl  font-medium text-center  capitalize">
           You Have <span className="text-[#8846FF]">{favorites.length}</span> Favorites
         </h5>
       </div>

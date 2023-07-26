@@ -1,8 +1,7 @@
-import pookatales from "../assets/pookatales.png";
+import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import pookatales from "../assets/pookatales.png";
 import HamburgerMenu from "./HamburgerMenu";
-import { useEffect } from "react";
 
 const Navbar = () => {
   // GSAP Navigation
@@ -58,12 +57,12 @@ const Navbar = () => {
   };
 
   return (
-    <header className="site_header bg-white px-4">
+    <header className="site_header px-4 z-50">
       {/* GSAP */}
       <div className="container mx-auto">
-        <div className="header_wrapper">
+        <div className="header_wrapper border-b border-[#1e1e1e] px-4">
           <div className="inner_header">
-            <div className="logo_wrapper w-32">
+            <div className="logo_wrapper w-24 lg:w-32">
               <Link to="/">
                 <img className="w-full" src={pookatales} alt="" />
               </Link>
