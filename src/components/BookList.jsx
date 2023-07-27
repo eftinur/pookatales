@@ -17,18 +17,17 @@ const BookList = () => {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 my-20">
-      <div className="w-3/4 mx-auto py-12">
-        <h5 className="text-4xl lg:text-9xl  font-medium text-center  capitalize">
-          Top Sellers this week
+    <div className="container mx-auto px-4 py-20">
+      <div className="w-3/4 mx-auto py-10">
+        <h5 className="text-4xl lg:text-8xl font-medium text-center  capitalize">
+        this week's top sellers
         </h5>
       </div>
-
       {loader ? (
         // Wobble Loaders Animation until getting API response
         <Loaders />
       ) : (
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 pt-12">
           {books.map((book, index) => (
             // Mapping items to render in the UI
             <BookCard key={index} book={book} />

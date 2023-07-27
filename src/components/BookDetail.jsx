@@ -28,7 +28,7 @@ const BookDetail = () => {
   };
 
   return (
-    <div className="container mx-auto py-20 px-4">
+    <div className="container h-screen mx-auto flex justify-center items-center px-4 pt-24">
       {loader ? (
         // Wobble Loaders Animation until getting API response
         <Loaders />

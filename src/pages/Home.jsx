@@ -1,8 +1,9 @@
 import About from "../components/About";
 import BookList from "../components/BookList";
+import Commercial from "../components/Commercial";
 import Contact from "../components/Contact";
 import Hero from "../components/Hero";
-import Upcoming from "../components/Upcoming";
+import Partners from "../components/Partners";
 
 const Home = () => {
   return (
@@ -10,7 +11,8 @@ const Home = () => {
       <Hero />
       <About />
       <BookList />
-      <Upcoming />
+      <Commercial />
+      <Partners />
       <Contact />
     </>
   );

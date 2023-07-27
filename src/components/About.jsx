@@ -2,9 +2,9 @@ const About = () => {
   return (
     <section className="bg-[#1e1e1e] text-white py-20">
       <div className="container mx-auto px-4">
-        <div className="w-3/4 mx-auto mb-12">
-          <h5 className="text-4xl lg:text-9xl text-white font-medium text-center capitalize">
-            History of POOKATALES
+        <div className="w-3/4 mx-auto py-10">
+          <h5 className="text-4xl lg:text-8xl text-white font-medium text-center capitalize">
+            History of Pookatales
           </h5>
         </div>
         <div className="w-full lg:w-2/4 mx-auto text-xs lg:text-sm font-medium">

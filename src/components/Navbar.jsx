@@ -60,7 +60,7 @@ const Navbar = () => {
     <header className="site_header px-4 z-50">
       {/* GSAP */}
       <div className="container mx-auto">
-        <div className="header_wrapper border-b px-4">
+        <div className="header_wrapper px-4">
           <div className="inner_header">
             <div className="logo_wrapper w-24 lg:w-32">
               <Link to="/">
